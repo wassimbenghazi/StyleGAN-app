@@ -1,0 +1,154 @@
+<!-- <main>
+  <div class="position-relative">
+    
+    <section class="section section-lg section-hero section-shaped bg-img">
+      
+      <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+      <div class="container shape-container d-flex align-items-center py-lg">
+        <div class="col px-0">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-12 text-center">
+              <img src="../../assets/img/logo/logo2.png" style="width: 800px; height: 400px; "   alt="Logo">
+              <p class="lead text-white">Artificial intelligence, better radiologist than man.</p>
+              <div class="btn-wrapper mt-5">
+                <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-index-header" class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                  <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                  <span class="btn-inner--text">Download Angular</span>
+                </a>
+                <a href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-index-header" class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" target="_blank">
+                  <span class="btn-inner--icon"><i class="fa fa-github"></i></span>
+                  <span class="btn-inner--text">
+                    <span class="text-warning">Star us</span> on Github</span>
+                </a>
+              </div>
+              <div class="mt-5">
+                <small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
+                <img src="../../assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+  </div>
+  
+  <app-sections></app-sections>
+</main> -->
+
+<mat-card class="example1-card">
+  <mat-card-content>
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <mat-card class="example-card">
+          <mat-card-content>
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+          <input
+          style="display: none"
+          type="file" (change)="onFileChanged($event)"
+          #fileInput>
+          <hr>
+          <button class="btn btn-outline-primary "(click)="fileInput.click()">Select File</button>
+          <button class="btn btn-outline-success "(click)="onUpload()">Upload </button>
+          
+        
+          <div *ngIf="show"class="alert alert-success" role="alert">
+            {{flower_prediction}}
+          </div>
+          
+        
+        
+          <button class="btn btn-outline-danger "(click)="Reset()">Reset</button>
+        </mat-card-content>
+        </mat-card>
+          <div *ngIf="true">
+            <mat-card class="example-card">
+              <mat-card-content>
+                <h2 class="example-h2">Configurations</h2>
+                
+            <mat-form-field>
+              <mat-label>latent represntation</mat-label>
+              <mat-select #lt_rep value="smile" >
+                <mat-option value="smile">smile</mat-option>
+                <mat-option value="genre">genre</mat-option>
+                <mat-option value="age">age</mat-option>
+              </mat-select>
+            </mat-form-field>
+          
+          
+            <mat-slider
+                class="example-margin"
+                [disabled]="false"
+                [invert]="false"
+                [max]="10"
+                [min]="-10"
+                [step]="1"
+                [thumbLabel]="true"
+                [tickInterval]="1"
+                [(ngModel)]="sliderValue1"
+                [vertical]="false">
+            </mat-slider>
+            <br>
+            <mat-slider
+                class="example-margin"
+                [disabled]="false"
+                [invert]="false"
+                [max]="10"
+                [min]="-10"
+                [step]="1"
+                [thumbLabel]="true"
+                [tickInterval]="1"
+                [(ngModel)]="sliderValue2"
+                [vertical]="false">
+            </mat-slider>
+            <br>
+            <mat-slider
+                class="example-margin"
+                [disabled]="false"
+                [invert]="false"
+                [max]="10"
+                [min]="-10"
+                [step]="1"
+                [thumbLabel]="true"
+                [tickInterval]="1"
+                [(ngModel)]="sliderValue3"
+                [vertical]="false">
+            </mat-slider>
+        
+           
+            <button class="btn btn-outline-success "(click)="onPrediction(lt_rep.value,sliderValue1,sliderValue2,sliderValue3)">generate </button>
+            
+          </mat-card-content>
+        </mat-card>
+          </div>
+      </nav>
+  
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <div *ngIf="true">
+          <img [src]="imageBlobUrl" style="width: 1000px; margin-left: 40px; margin-top: 20px;">
+        </div>
+      </div>
+    </div>
+
+
+</mat-card-content>
+</mat-card>  <!-- <h2>Thumbnail imageBlobUrl</h2>
+  <img [src]="imageBlobUrl"> -->
+  
