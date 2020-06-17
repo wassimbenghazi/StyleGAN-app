@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class FlowerService {
-  private _uploding = "http://1b079399.ngrok.io/uploding"
-  private _predict = "http://1b079399.ngrok.io/predict"
+  private _uploding = "http://31d11231.ngrok.io/uploding"
+  private _predict = "http://31d11231.ngrok.io/predict"
   private header = new HttpHeaders({'content-type': 'multipart/form-data', 'Accept-Charset': 'UTF-8'});
   private header2 = new HttpHeaders({'content-type': 'application/json', 'Accept-Charset': 'UTF-8'});
   options = { headers: this.header };
